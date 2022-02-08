@@ -1,5 +1,6 @@
 :root {
     --max-width: 800px;
+    --primary-color: #00206D;
 }
 
 body {
@@ -23,7 +24,7 @@ body {
 }
 
 #heading {
-    background: blue;
+    background: var(--primary-color);
     color: white;
     margin: 0;
     margin-bottom: 1rem;
@@ -36,7 +37,7 @@ body {
 }
 
 #editor {
-    border: 1px solid black;
+    border: 3px solid var(--primary-color);
     width: 100%;
     margin: 0;
 }
@@ -74,16 +75,16 @@ body {
 
 button {
 background: white;
-border: solid blue;
+border: solid var(--primary-color);
 padding: 5px;
 border-radius: 5px;
-color: blue;
+color: var(--primary-color);
 font-weight: bold;
 font-size: medium;
 }
 
 input[type="text"] {
-border-bottom: solid blue 2px;
+border-bottom: solid var(--primary-color) 2px;
 border-top: none;
 border-left: none;
 border-right: none;
@@ -98,10 +99,10 @@ display: inline-block;
 min-width: 20px;
 padding: 5px;
 text-align: center;
-color: blue;
+color: var(--primary-color);
 cursor: pointer;
 background: white;
-border: solid blue;
+border: solid var(--primary-color);
 transition: 100ms;
 }
 
@@ -116,15 +117,15 @@ border-top-right-radius: 10px;
 }
 
 input[type="radio"]:checked+label {
-background: blue;
+background: var(--primary-color);
 color: white;
 }
 
 #filedialog label {
-border: solid blue;
+border: solid var(--primary-color);
 padding: 5px;
 border-radius: 10px;
-color: blue;
+color: var(--primary-color);
 font-weight: bold;
 }
 

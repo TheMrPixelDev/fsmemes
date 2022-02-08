@@ -1,0 +1,17 @@
+{
+    "short_name": "FSmemes",
+    "name": "Memegenerator Faschaft Informatik Mathematik",
+    "icons" : [
+        {
+            "src": "/assetes/img/photo-photography-image-picture_108525.png",
+            "type": "image/svg+xml",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/?source=pwa",
+    "background_color": "#00206D",
+    "display": "standalone",
+    "scope": "/",
+    "theme": "#00206D",
+    "description": "Erstelle schnelle Memes!"
+}

@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assetes/style.css">
-    <title>Generator</title>
+    <link rel="shortcut icon" href="/assetes/img/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/assetes/manifest.json">
+    <title>Meme Generator</title>
 </head>
 <body>
     <div id="main">
@@ -19,12 +21,11 @@
             <div id="texteditor">
                 <input type="text" style="height: 1.5rem;" name="toptext" id="toptext" oninput="update()">
                 <br>
-                <label for="toptext" style="color: blue;">Oberkantentext</label>
+                <label for="toptext" style="color: var(--primary-color);">Oberkantentext</label>
                     <br><br>
                 <input style="height: 1.5rem;" type="text" name="bottomtext" id="bottomtext" oninput="update()">
                 <br>
-                <label style="color: blue;" for="bottomtext">Unterkantentext</label>
-                
+                <label style="color: var(--primary-color);" for="bottomtext">Unterkantentext</label>
             </div>
             
             <br>
@@ -38,14 +39,14 @@
             <form class="toggle">
                 <input id="fit" type="radio" name="scaling" value="fit" checked onclick="changeScaling()">
                 <label id="fitlabel" for="fit">passend</label>
-                
                 <input id="fill" type="radio" name="scaling" value="fill" onclick="changeScaling()">
                 <label id="filllabel" for="fill">füllend</label>
-                
                 </form>
             <br>
             <br>
-                <button onclick="download()">Herunterladen</button>
+            <button onclick="download()">Herunterladen</button>
+            <br>
+                <img src="/assetes/img/logo_fsinfo_pathed_white.svg" style="height: 4rem; margin: 4rem; filter: invert(1); opacity: 0.5;">
         </div>
     </div>
     <script src="/assetes/app.js"></script>
