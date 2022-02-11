@@ -47,7 +47,13 @@
                 <label id="fitlabel" for="fit">passend</label>
                 <input id="fill" type="radio" name="scaling" value="fill" onclick="changeScaling()">
                 <label id="filllabel" for="fill">füllend</label>
-                </form>
+            </form>
+            <br>
+
+            <form class="toggle">
+                <input id="txtbackground" type="checkbox" hidden name="bg" value="true" checked onclick="changeTxtBg()">
+                <label id="txtbackgroundlabel" for="txtbackground">Texthintergrund</label>
+            </form>
             <br>
             <br>
             <button onclick="download()">Herunterladen</button>
