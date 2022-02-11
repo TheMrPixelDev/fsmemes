@@ -9,9 +9,8 @@ The Memegenerator of the FSinfo at the University of Passau
 * Size given Picture to Width
 
 ## TODOs
-* improved Picture-quality
 * manually position sized pictures
-* multiple picures
+* multiple pictures
 * meme-presets
 
 ---
