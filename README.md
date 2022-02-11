@@ -7,6 +7,7 @@ The Memegenerator of the FSinfo at the University of Passau
 * Impact as Main-Font
 * Set Multiline-Text for top and bottom of Meme
 * Size given Picture to Width
+* White background of Text is toggleable
 
 ## TODOs
 * improved Picture-quality

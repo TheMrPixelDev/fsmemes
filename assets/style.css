@@ -44,47 +44,46 @@ body {
 
 @media only screen and (max-width: 800px) {        
 
-#main {
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    
-}
+    #main {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
 
-#heading {
-    border-radius: 0;
-}
+    }
 
-.flex-item {
-    display: block;
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-    height: 100%;
-    text-align: center;
-}
-#editor {
-    border: white;
-    margin: 0;
-    padding: 0;
-}
+    #heading {
+        border-radius: 0;
+    }
+
+    .flex-item {
+        display: block;
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100%;
+        text-align: center;
+    }
+    #editor {
+        border: white;
+        margin: 0;
+        padding: 0;
+    }
 
 }
 
 button {
-background: white;
-border: solid var(--primary-color);
-padding: 5px;
-border-radius: 5px;
-color: var(--primary-color);
-font-weight: bold;
-font-size: medium;
+    background: white;
+    border: solid var(--primary-color);
+    padding: 5px;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: medium;
 }
 
 input[type="radio"] {
-display: none;
+    display: none;
 }
 
 textarea {
@@ -122,40 +121,48 @@ textarea {
 }
 
 .toggle>label {
-display: inline-block;
-min-width: 20px;
-padding: 5px;
-text-align: center;
-color: var(--primary-color);
-cursor: pointer;
-background: white;
-border: solid var(--primary-color);
-transition: 100ms;
+    display: inline-block;
+    min-width: 20px;
+    padding: 5px;
+    text-align: center;
+    color: var(--primary-color);
+    cursor: pointer;
+    background: white;
+    border: solid var(--primary-color);
+    transition: 100ms;
 }
 
 .toggle>label:first-of-type {
-border-bottom-left-radius: 10px;
-border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .toggle>label:last-of-type {
-border-bottom-right-radius: 10px;
-border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 input[type="radio"]:checked+label {
-background: var(--primary-color);
-color: white;
+    background: var(--primary-color);
+    color: white;
+}
+
+
+input[type="checkbox"]:checked +label {
+    color: white;
+    background: var(--primary-color);
+    border: solid var(--primary-color);
+    border-radius: 10px;
 }
 
 #filedialog label {
-border: solid var(--primary-color);
-padding: 5px;
-border-radius: 10px;
-color: var(--primary-color);
-font-weight: bold;
+    border: solid var(--primary-color);
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 #filedialog input {
-display: none;
+    display: none;
 }
