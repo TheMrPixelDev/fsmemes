@@ -29,18 +29,25 @@
                 <label style="color: var(--primary-color);" for="bottomtext">Unterkantentext</label>
             </div>
             <br>
+
             <div class="slidecontainer">
-                <input type="range" min="-100" max="100" value="0" class="slider" id="fontSize">
+                <input type="range" min="1" max="200" value="100" class="slider" id="fontSize">
                 <br>Text-size
             </div>
-            
+            <br>
+
+            <form class="toggle">
+                <input id="txtbackground" type="checkbox" hidden name="bg" value="true" checked onclick="changeTxtBg()">
+                <label id="txtbackgroundlabel" for="txtbackground">Texthintergrund</label>
+            </form>
+            <br>
+
             <br>
             <br>
                 <div id="filedialog">
                     <label for="imginput">Bild auswählen</label>
                     <input type="file" id="imginput">
                 </div>
-            <br>
             <br>
             <form class="toggle">
                 <input id="fit" type="radio" name="scaling" value="fit" checked onclick="changeScaling()">
@@ -50,19 +57,27 @@
             </form>
             <br>
 
-            <form class="toggle">
-                <input id="txtbackground" type="checkbox" hidden name="bg" value="true" checked onclick="changeTxtBg()">
-                <label id="txtbackgroundlabel" for="txtbackground">Texthintergrund</label>
-            </form>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50" class="slider" id="pictureOffset">
+                <br>Bild-Schieber
+            </div>
             <br>
+
             <br>
             <button onclick="download()">Herunterladen</button>
             <br>
-                <img src="/assets/img/logo_fsinfo_pathed_white.svg" style="height: 4rem; margin: 4rem; filter: invert(1); opacity: 0.5;">
+            <p style="margin: 4rem">
+                <a href="https://fsinfo.fim.uni-passau.de/">
+                    <img src="/assets/img/logo_fsinfo_pathed_white.svg" style="height: 4rem; padding-right: 3rem; filter: invert(1); opacity: 0.5;">
+                </a>
+                <a href="https://github.com/TheMrPixelDev/fsmemes">
+                    <img src="https://seeklogo.com/images/G/github-logo-5F384D0265-seeklogo.com.png" style="height: 4rem;">
+                </a>
+            </p>
             <br>
             <p>
                 Bugs und Feature Requests an
-                <a href="mailto:harrerj@fim.uni-passau.de">harrerj@fim.uni-passau.de</a>
+                <a href="mailto:harrerj@fim.uni-passau.de">harrerj@fim.uni-passau.de</a><br>
             </p>
         </div>
     </div>
