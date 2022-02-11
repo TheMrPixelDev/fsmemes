@@ -7,9 +7,11 @@ let img_input = document.getElementById("imginput");
         const slider = document.getElementById("fontSize");
         var image = new Image();
         var scaleFit = true;
-        var fontSize = 30;
-
-        context.font = "30px Maximum Impact";
+        editor.width = editor.height = 3000;
+        var baseSize = editor.width*0.05;
+        var fontSize = editor.width*0.05;
+        
+        context.font = `bold ${fontSize}px Maximum Impact`;
         context.fillStyle = "black";
         context.textAlign = "center";
         context.fillText("Hier könnte ihr Meme stehen", editor.width / 2, editor.height / 2);
@@ -17,7 +19,7 @@ let img_input = document.getElementById("imginput");
         function renderText() {
             context.fillStyle = "white";
             context.textAlign = "center";
-            context.font = fontSize+"px Maximum Impact";
+            context.font = `${fontSize}px Maximum Impact`;
 
             let lines = topText.value.split("\n");
             for(let i=0;i<lines.length;i++){
@@ -77,7 +79,8 @@ let img_input = document.getElementById("imginput");
         };
 
         slider.oninput = function() {
-            fontSize = this.value;
+            fontSize = baseSize + Number(this.value)*5;
+            console.log(fontSize);
             update();
         }
 
