@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assetes/style.css">
-    <link rel="shortcut icon" href="/assetes/img/favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="/assetes/manifest.json">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/assets/manifest.json">
     <title>Meme Generator</title>
 </head>
 <body>
@@ -19,13 +19,19 @@
                 <h1>FSmemes</h1>
             </div>            
             <div id="texteditor">
-                <input type="text" style="height: 1.5rem;" name="toptext" id="toptext" oninput="update()">
+                <textarea style="height: 2rem;" name="toptext" id="toptext" rows="3" cols="6" maxlength="100" wrap="hard" spellcheck="true" oninput="update()"></textarea>
                 <br>
                 <label for="toptext" style="color: var(--primary-color);">Oberkantentext</label>
-                    <br><br>
-                <input style="height: 1.5rem;" type="text" name="bottomtext" id="bottomtext" oninput="update()">
+                <br>
+                <br>
+                <textarea style="height: 2rem;" name="bottomtext" id="bottomtext" rows="3" cols="6" maxlength="100" wrap="hard" spellcheck="true" oninput="update()"></textarea>
                 <br>
                 <label style="color: var(--primary-color);" for="bottomtext">Unterkantentext</label>
+            </div>
+            <br>
+            <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="30" class="slider" id="fontSize">
+                <br>Text-size
             </div>
             
             <br>
@@ -46,9 +52,9 @@
             <br>
             <button onclick="download()">Herunterladen</button>
             <br>
-                <img src="/assetes/img/logo_fsinfo_pathed_white.svg" style="height: 4rem; margin: 4rem; filter: invert(1); opacity: 0.5;">
+                <img src="/assets/img/logo_fsinfo_pathed_white.svg" style="height: 4rem; margin: 4rem; filter: invert(1); opacity: 0.5;">
         </div>
     </div>
-    <script src="/assetes/app.js"></script>
+    <script src="/assets/app.js"></script>
 </body>
 </html>
