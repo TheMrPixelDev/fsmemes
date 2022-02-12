@@ -5,14 +5,16 @@
         const txtBgInput = document.getElementById("txtbackground");
         const bottomText = document.getElementById("bottomtext");
         const topText = document.getElementById("toptext");
-        const slider = document.getElementById("fontSize");
+        const fontSlider = document.getElementById("fontSize");
+        const pictureSlider = document.getElementById("pictureOffset");
 
-        var image = new Image();
-        var scaleFit = true;
-        let textBackground = true;
         editor.width = editor.height = 3000;
-        var baseSize = editor.width*0.05;
-        var fontSize = editor.width*0.05;
+        let image = new Image();
+        let scaleFit = true;
+        let textBackground = true;
+        let baseSize = editor.width*0.06;
+        let fontSize = baseSize;
+        let pictureOffset = 50; // picture-offset on Y-Axis in Percentage
         
         context.font = `bold ${fontSize}px Maximum Impact`;
         context.fillStyle = "black";
@@ -61,14 +63,46 @@
         }
 
         function renderImage() {
-            var scale;
-            var border = editor.width*0.01;
-            if(scaleFit) {
-                scale = Math.min(editor.width / image.height, editor.height / image.height);
-            } else {
-                scale = Math.min(editor.width / image.width, editor.height);
+            let scale;
+            let border = editor.width*0.01;
+            let offset;
+            let x;
+            let y;
+            let w = editor.width - border*2;
+            let h = editor.height - border*2;
+            if(scaleFit){
+                scale = Math.min(w / image.height, h / image.height);
+                x = (w / 2) - (image.width / 2) * scale;
+                y = (h / 2) - (image.height / 2) * scale;
+
+                // offset of picture
+                if(image.width > editor.width-border*2)
+                    offset = lerp(x,-x,pictureOffset/100);
+                else
+                    offset = 0;
+
+                context.drawImage(image, x+border+offset, y+border, image.width * scale, image.height * scale);
+            }else{
+                scale = Math.min(w / image.width, h);
+                x = (w / 2) - (image.width / 2) * scale;
+                y = (h / 2) - (image.height / 2) * scale;
+
+                // offset of picture
+                if(image.height > editor.height-border*2)
+                    offset = lerp(y,-y, pictureOffset/100);
+                else
+                    offset = 0;
+
+                context.drawImage(image, x+border, y+border+offset, image.width * scale, image.height * scale);
             }
-            context.drawImage(image, border, border, image.width * scale - border*2, image.height * scale - border*2);
+
+
+            // Overpaint picture-overhang on edges
+            context.fillStyle = "white";
+            context.fillRect(0,0,editor.width,border);
+            context.fillRect(0,editor.height-border,editor.width,border);
+            context.fillRect(0,0,border,editor.height);
+            context.fillRect(editor.width-border,0,border,editor.height);
         }
 
         function update() {
@@ -100,9 +134,13 @@
             reader.readAsDataURL(img_input.files[0])
         };
 
-        slider.oninput = function() {
-            fontSize = baseSize + Number(this.value)*5;
-            console.log(fontSize);
+        fontSlider.oninput = function() {
+            fontSize = baseSize * this.value/100; // lerp Font-Size between 1% and 200% of basesize
+            update();
+        }
+
+        pictureSlider.oninput = function() {
+            pictureOffset = this.value;
             update();
         }
 
@@ -114,9 +152,12 @@
             document.body.appendChild(tmpLink);
             tmpLink.click();
             document.body.removeChild(tmpLink);
-
         }
 
     function isEmpty(str) {
         return (!str || str.length === 0 );
+    }
+
+    function lerp(a, b, t){
+        return a + (b-a)*t;
     }
