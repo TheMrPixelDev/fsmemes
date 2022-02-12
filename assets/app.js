@@ -1,7 +1,7 @@
 // Add service worker
 window.addEventListener("load", () => {
     if ("serviceWorker" in navigator)
-        navigator.serviceWorker.register("/assets/service-worker.js");
+        navigator.serviceWorker.register("/service-worker.js");
 });
         
         const img_input = document.getElementById("imginput");
