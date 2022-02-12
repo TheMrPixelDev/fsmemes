@@ -1,3 +1,9 @@
+// Add service worker
+window.addEventListener("load", () => {
+    if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("/assets/service-worker.js");
+});
+        
         const img_input = document.getElementById("imginput");
         const editor = document.getElementById("editor");
         const context = editor.getContext("2d");
